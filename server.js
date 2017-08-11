@@ -2,7 +2,6 @@ var express = require('express');
 var app = express();
 var PORT = 3000;
 
-
 /*
 	Express app takes two arguments , the first is the route , the second is a function
 	that has request - response parameters 
@@ -17,18 +16,7 @@ var PORT = 3000;
 		http://localhost:3000/about
 */
 
-
-var middleware = {
-	requireAuthentication: function (req, res, next){
-		console.log('Private route requested');
-		next();
-	},
-	logger: function(req, res, next){
-		console.log('Request: '+ req.method + ' '+ req.originalUrl + ' @ '+ new Date().toString() );
-		next();
-	}
-};
-
+var middleware = require('./middleware.js');
 app.use(middleware.logger);
 
 
