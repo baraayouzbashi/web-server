@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 /*
 	Express app takes two arguments , the first is the route , the second is a function
